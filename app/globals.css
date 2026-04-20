@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ouro: #D4AF37;
+    --ouro-dim: rgba(212, 175, 55, 0.12);
+    --ouro-borda: rgba(212, 175, 55, 0.22);
+    --verde: #00C48C;
+    --vermelho: #FF4444;
+    --amarelo: #F5A623;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #080808;
+    color: #F5F5F5;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::-webkit-scrollbar       { width: 3px; height: 3px; }
+  ::-webkit-scrollbar-track { background: #080808; }
+  ::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+  ::selection { background: rgba(212,175,55,0.25); }
+}
+
+@layer components {
+  /* Cards */
+  .cartao {
+    @apply bg-[#0F0F0F] border border-[#1A1A1A] rounded-2xl p-6;
+  }
+  .cartao-sm {
+    @apply bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-4;
+  }
+  .cartao-destaque {
+    @apply cartao border-[var(--ouro-borda)];
+    background: radial-gradient(ellipse at top left, rgba(212,175,55,0.06) 0%, #0F0F0F 60%);
+  }
+
+  /* Botões */
+  .btn-primario {
+    @apply bg-[#D4AF37] text-black font-semibold px-4 py-2.5 rounded-xl text-sm
+           hover:bg-[#e8c84a] active:scale-95 transition-all duration-150
+           disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2;
+  }
+  .btn-fantasma {
+    @apply border border-[#1E1E1E] text-[#888] px-4 py-2.5 rounded-xl text-sm
+           hover:border-[#333] hover:text-white transition-all duration-150 flex items-center gap-2;
+  }
+  .btn-perigo {
+    @apply border border-red-900/40 text-red-400 px-3 py-2 rounded-lg text-sm
+           hover:bg-red-950/40 transition-all duration-150;
+  }
+
+  /* Inputs */
+  .input {
+    @apply bg-[#141414] border border-[#1E1E1E] rounded-xl px-3.5 py-2.5 text-sm
+           text-white placeholder-[#444] w-full
+           focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/20
+           transition-colors duration-150;
+  }
+  .label {
+    @apply text-[10px] text-[#666] uppercase tracking-widest mb-1.5 block font-medium;
+  }
+  select.input option { background: #141414; }
+
+  /* Tags de status */
+  .tag { @apply text-[11px] px-2.5 py-1 rounded-full border font-medium; }
+  .tag-verde    { @apply tag border-[#00C48C]/30 text-[#00C48C] bg-[#00C48C]/8; }
+  .tag-amarelo  { @apply tag border-[#F5A623]/30 text-[#F5A623] bg-[#F5A623]/8; }
+  .tag-vermelho { @apply tag border-[#FF4444]/30 text-[#FF4444] bg-[#FF4444]/8; }
+  .tag-cinza    { @apply tag border-[#1E1E1E] text-[#666] bg-[#141414]; }
+  .tag-ouro     { @apply tag border-[#D4AF37]/30 text-[#D4AF37] bg-[#D4AF37]/8; }
+
+  /* Tipografia */
+  .titulo-stat {
+    @apply font-display text-3xl font-bold tracking-tight;
+  }
+  .titulo-pagina {
+    @apply font-display text-2xl font-semibold;
+  }
+  .secao-titulo {
+    @apply text-sm font-medium text-white;
+  }
+
+  /* Toggle switch */
+  .toggle {
+    @apply w-10 h-[22px] rounded-full transition-colors relative cursor-pointer flex-shrink-0;
+  }
+  .toggle-thumb {
+    @apply absolute top-[3px] left-[3px] w-4 h-4 rounded-full bg-white transition-transform duration-200;
+  }
+
+  /* Divisor */
+  .divisor { @apply border-t border-[#141414]; }
+
+  /* Linha de tabela */
+  .linha-tabela {
+    @apply grid items-center px-4 py-3 rounded-xl bg-[#0F0F0F] border border-[#1A1A1A]
+           hover:border-[#252525] transition-colors animate-subir group;
+  }
+
+  /* Alerta */
+  .alerta-perigo  { @apply border-red-900/40 bg-red-950/20 text-red-400; }
+  .alerta-aviso   { @apply border-[#F5A623]/30 bg-[#F5A623]/5 text-[#F5A623]; }
+  .alerta-info    { @apply border-blue-800/40 bg-blue-950/20 text-blue-400; }
+}
+
+@layer utilities {
+  .brilho-ouro { box-shadow: 0 0 30px rgba(212,175,55,0.15); }
+
+  .animate-subir {
+    animation: subir 0.35s ease-out both;
+  }
+  .animate-aparecer {
+    animation: aparecer 0.25s ease-out both;
+  }
+
+  /* Stagger delays */
+  .delay-1 { animation-delay: 50ms; }
+  .delay-2 { animation-delay: 100ms; }
+  .delay-3 { animation-delay: 150ms; }
+  .delay-4 { animation-delay: 200ms; }
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes aparecer {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Recharts tooltip */
+.recharts-default-tooltip {
+  background: #0F0F0F !important;
+  border: 1px solid #1E1E1E !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+}
