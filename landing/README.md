@@ -31,7 +31,6 @@ saíram do próprio repositório e podem ser trocadas em `content/site.ts`:
 | Dor | Faturamento cresce, caixa não; tráfego e ferramentas consomem margem sem aparecer |
 
 ### Antes de publicar (TODOs em `content/site.ts`)
-- `WHATSAPP_NUMBER`: número oficial.
 - `site.url` e `site.email`: domínio e e-mail finais.
 - `climax.urgency`: só manter se a limitação de implantações for real (ou `null`).
 - FAQ "Quanto tempo leva": confirmar o prazo de implantação.

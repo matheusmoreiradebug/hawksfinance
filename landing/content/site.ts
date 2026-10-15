@@ -19,8 +19,8 @@ export type Stat = { value: number; prefix?: string; suffix?: string; label: str
 export type OfferItem = { title: string; body: string };
 export type Faq = { q: string; a: string };
 
-// TODO: substituir pelo número oficial (formato internacional, só dígitos).
-const WHATSAPP_NUMBER = "5500000000000";
+// WhatsApp comercial: (11) 94788-4127, formato internacional só com dígitos.
+const WHATSAPP_NUMBER = "5511947884127";
 const WHATSAPP_MESSAGE = "Olá! Quero agendar uma demonstração do Hawks Finance para a minha agência.";
 
 export const site = {
