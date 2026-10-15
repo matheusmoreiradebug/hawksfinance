@@ -26,7 +26,6 @@ const WHATSAPP_MESSAGE = "Olá! Quero agendar uma demonstração do Hawks Financ
 export const site = {
   name: "Hawks Finance",
   legalName: "Hawks Agência Digital",
-  // TODO: domínio final de produção.
   url: "https://hawksfinance.com.br",
   locale: "pt_BR",
   title: "Hawks Finance — Inteligência financeira para agências digitais",

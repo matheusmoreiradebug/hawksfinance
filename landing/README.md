@@ -31,7 +31,7 @@ saíram do próprio repositório e podem ser trocadas em `content/site.ts`:
 | Dor | Faturamento cresce, caixa não; tráfego e ferramentas consomem margem sem aparecer |
 
 ### Antes de publicar (TODOs em `content/site.ts`)
-- `site.url` e `site.email`: domínio e e-mail finais.
+- `site.email`: e-mail comercial final (domínio confirmado: hawksfinance.com.br).
 - `climax.urgency`: só manter se a limitação de implantações for real (ou `null`).
 - FAQ "Quanto tempo leva": confirmar o prazo de implantação.
 - `proof.scenario`: é um **cenário ilustrativo**, rotulado assim na página. Trocar por um case real autorizado quando houver.
