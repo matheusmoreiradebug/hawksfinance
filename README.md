@@ -5,6 +5,12 @@ Sistema de inteligência financeira para a Hawks Agência Digital.
 
 ---
 
+## Landing page
+
+A landing page comercial do produto vive em [`landing/`](landing/README.md), como projeto Next.js 15 independente (`cd landing && npm install && npm run dev`).
+
+---
+
 ## Stack
 
 | Camada | Tecnologia |
